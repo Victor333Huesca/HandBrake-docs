@@ -111,12 +111,12 @@ article.docs header .super .title {
 }
 
 article.docs header + * {
-    margin-top: 9.875rem; /* 6.75rem + header .super height */
+    margin-top: 7.875rem; /* 4.75rem + header .super height */
 }
 
 article.docs nav {
     margin: 0 auto;
-    padding: .9375rem .9375rem 2.8125rem;
+    padding: .9375rem .9375rem 2.75rem;
     width: 90%;
     height: 3.75rem;
     font-size: .6875rem;
@@ -244,7 +244,6 @@ article.docs nav .navigation ul {
 
 article.docs.js nav .navigation > ul {
     display: none;
-    max-height: 300px;
     overflow-x: hidden;
     overflow-y: auto;
 }
@@ -421,7 +420,7 @@ article.docs p + pre {
 
 article.docs table {
     margin: 1.5rem 0;
-    font-size: .9rem;
+    font-size: .75em;
     border-spacing: 0;
     border-collapse: collapse;
 }
@@ -461,9 +460,17 @@ article.docs td {
     padding: .5em .66666em;
 }
 
+article.docs td > code {
+    padding: 0 .2em;
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    text-decoration-color: steelblue;
+    text-decoration-thickness: .1em;
+}
+
 article.docs footer {
-	border-top: 1px solid lightgray;
-	margin-top: 2em;
+    border-top: 1px solid lightgray;
+    margin-top: 2em;
 }
 
 article.docs.license footer {
@@ -582,7 +589,12 @@ article.docs .footnotes + footer {
 
 /* Wider than 350 */
 @media (min-width: 350px) {
+    article.docs header + * {
+        margin-top: 8.125rem; /* 5rem + header .super height */
+    }
+
     article.docs nav {
+        padding-bottom: 3rem;
         font-size: .75rem;
     }
 }
@@ -639,11 +651,11 @@ article.docs .footnotes + footer {
     }
 
     article.docs header + * {
-        margin-top: 11.25rem; /* 7.5rem + header .super height */
+        margin-top: 9.5rem; /* 5.75rem + header .super height */
     }
 
     article.docs nav {
-        padding: 1.25rem 3.125rem 2.8125rem;
+        padding: 1.25rem 3.125rem 2.5rem;
         width: 580px;
         height: 4.6875rem;
     }
@@ -710,11 +722,11 @@ article.docs .footnotes + footer {
     }
 
     article.docs header + * {
-        margin-top: 12.5rem; /* 8.75rem + header .super height */
+        margin-top: 12.5rem; /* 7rem + header .super height */
     }
 
     article.docs nav {
-        padding: 1.875rem 6.25rem 3.75rem;
+        padding: 1.875rem 6.25rem 2.5rem;
         width: 680px;
     }
 
@@ -765,6 +777,7 @@ article.docs .footnotes + footer {
     }
 
     article.docs nav {
+        padding-bottom: 4.25rem;
         width: 760px;
         font-size: .9rem;
     }
@@ -781,17 +794,25 @@ article.docs .footnotes + footer {
         left: 0;
         margin: .166666em 15px .166666em;
         width: 275px;
-        max-height: 900px;
+        max-height: 100vh;
         overflow-x: hidden;
-        overflow-y: auto;
+        overflow-y: hidden;
     }
 
     article.docs.article.js nav .navigation {
         display: block;
     }
 
+    article.docs.js nav .navigation > ul {
+        max-height: calc(80vh - 20rem);
+    }
+
+    article.docs.article.js nav .navigation > ul:last-child {
+        border-bottom: 1px solid whitesmoke;
+    }
+
     article.docs header + * {
-        margin-top: 15.5rem; /* 10.5rem + header .super height */
+        margin-top: 13.75rem; /* 8.75rem + header .super height */
     }
 
     article.docs h1 {
@@ -866,10 +887,6 @@ article.docs .footnotes + footer {
 
 /* Shorter than 550 */
 @media (max-height: 549px) {
-    article.docs header + * {
-        margin-top: 10rem; /* 6.25rem + header .super height */
-    }
-
     article.docs figure img {
         max-height: 300px;
     }
@@ -887,23 +904,15 @@ article.docs .footnotes + footer {
     }
 
     article.docs header + * {
-        /* margin-top: 8.75rem; /* 5rem + header .super height */
         margin-top: 5.25rem; /* 2.5rem + header .super height */
     }
 
     article.docs nav {
-        padding: .625rem .9375rem 1.5625rem;
-        /*
-        height: 3.125rem;
-        */
+        padding: .625rem .9375rem 1.5rem;
         height: 2rem;
     }
 
     article.docs nav .breadcrumbs {
-        /*
-        margin-top: .5em;
-        font-size: .625rem;
-        */
         display: none;
     }
 
@@ -914,8 +923,41 @@ article.docs .footnotes + footer {
 
 /* Shorter than 350 */
 @media (max-height: 349px) {
+    article.docs nav {
+        padding: .625rem .9375rem 1.25rem;
+    }
+
     article.docs figure img {
         max-height: 160px;
+    }
+}
+
+/* Get a new phone? */
+@media (max-height: 349px) and (max-width: 349px) {
+    article.docs header + * {
+        margin-top: 3.75rem; /* 2rem + header .super height */
+    }
+
+    article.docs header .super {
+        height: 2rem;
+    }
+
+    article.docs header .super .logo {
+        padding: .25rem .25rem;
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+
+    article.docs header .super .logo:hover {
+        margin-right: .46875rem;
+    }
+
+    article.docs nav {
+        padding: .3125rem .9375rem .9375rem;
+    }
+
+    article.docs h1 {
+        font-size: 2em;
     }
 }
 

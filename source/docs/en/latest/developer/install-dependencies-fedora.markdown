@@ -7,7 +7,7 @@ Project_Version: Latest
 Language:        English
 Language_Code:   en
 Authors:         [ Bradley Sepos <bradley@bradleysepos.com> (BradleyS) ]
-Copyright:       2019 HandBrake Team
+Copyright:       2021 HandBrake Team
 License:         Creative Commons Attribution-ShareAlike 4.0 International
 License_Abbr:    CC BY-SA 4.0
 License_URL:     https://handbrake.fr/docs/license.html
@@ -16,7 +16,7 @@ License_URL:     https://handbrake.fr/docs/license.html
 Installing dependencies on Fedora
 =================================
 
-The following instructions are for [Fedora](https://getfedora.org) 26 Workstation and later.
+The following instructions are for [Fedora](https://getfedora.org) 30 through 32.
 
 Basic requirements to run commands:
 
@@ -25,7 +25,7 @@ Basic requirements to run commands:
 Dependencies:
 
 - Development Tools
-- Development Libraries
+- C Development Tools and Libraries
 - bzip2-devel
 - cmake
 - fontconfig-devel
@@ -47,19 +47,27 @@ Dependencies:
 - libvpx-devel
 - m4
 - make
+- meson
 - nasm
+- ninja-build
+- numactl-devel
 - opus-devel
 - patch
 - python
 - speex-devel
 - tar
+- turbojpeg-devel
 - xz-devel
-- yasm
 - zlib-devel
 
 Additional dependencies not available in the base repository:
 
 - x264-devel [RPM Fusion]
+
+Intel Quick Sync Video dependencies (optional):
+
+- libva-devel
+- libdrm-devel
 
 Graphical interface dependencies:
 
@@ -67,37 +75,31 @@ Graphical interface dependencies:
 - GNOME Software Development
 - dbus-glib-devel
 - gstreamer1-devel
+- gstreamer1-libav
 - gstreamer1-plugins-base-devel
 - intltool
 - libgudev1-devel
 - libnotify-devel
-- webkit2gtk3-devel (webkitgtk4-devel for Fedora 27, webkitgtk3-devel for Fedora 26)
-
-Quick Sync Video dependencies (configure --enable-qsv)
-
-- libva
-- libdrm
+- webkit2gtk3-devel
 
 Install dependencies.
 
     sudo dnf update
-    sudo dnf groupinstall "Development Tools" "Development Libraries"
-    sudo dnf install bzip2-devel cmake fontconfig-devel freetype-devel fribidi-devel gcc-c++ git harfbuzz-devel jansson-devel lame-devel lbzip2 libass-devel libogg-devel libsamplerate-devel libtheora-devel libtool libvorbis-devel libxml2-devel libvpx-devel m4 make nasm opus-devel patch python speex-devel tar xz-devel yasm zlib-devel
+    sudo dnf groupinstall "Development Tools" "C Development Tools and Libraries"
+    sudo dnf install bzip2-devel cmake fontconfig-devel freetype-devel fribidi-devel gcc-c++ git harfbuzz-devel jansson-devel lame-devel lbzip2 libass-devel libogg-devel libsamplerate-devel libtheora-devel libtool libvorbis-devel libxml2-devel libvpx-devel m4 make meson nasm ninja-build numactl-devel opus-devel patch python speex-devel tar turbojpeg-devel xz-devel zlib-devel
 
 Install the [RPM Fusion](http://rpmfusion.org) Free repository and related additional dependencies.
 
     sudo dnf localinstall --nogpgcheck https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(cat /etc/system-release | awk '{ print $3}').noarch.rpm
     sudo dnf install x264-devel
 
-To build the GTK [GUI](abbr:Graphical User Interface), install the graphical interface dependencies.
-
-    sudo dnf groupinstall "X Software Development" "GNOME Software Development"
-    sudo dnf install dbus-glib-devel gstreamer1-devel gstreamer1-plugins-base-devel intltool libgudev1-devel libnotify-devel
-    sudo dnf install webkit2gtk3-devel || sudo dnf install webkitgtk4-devel || sudo dnf install webkitgtk3-devel
-
-To build with Quick Sync Video support, install QSV dependencies.
+To build with Intel Quick Sync Video support, install the QSV dependencies.
 
     sudo dnf install libva-devel libdrm-devel
 
-Fedora is now prepared to build HandBrake. See [Building HandBrake for Linux](build-linux.html) for further instructions.
+To build the GTK [GUI](abbr:Graphical User Interface), install the graphical interface dependencies.
 
+    sudo dnf groupinstall "X Software Development" "GNOME Software Development"
+    sudo dnf install dbus-glib-devel gstreamer1-devel gstreamer1-libav gstreamer1-plugins-base-devel intltool libgudev1-devel libnotify-devel webkit2gtk3-devel
+
+Fedora is now prepared to build HandBrake. See [Building HandBrake for Linux](build-linux.html) for further instructions.

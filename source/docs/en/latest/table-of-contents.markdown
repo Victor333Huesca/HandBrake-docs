@@ -7,7 +7,7 @@ Project_Version: Latest
 Language:        English
 Language_Code:   en
 Authors:         [ Bradley Sepos <bradley@bradleysepos.com> (BradleyS), Scott (s55) ]
-Copyright:       2019 HandBrake Team
+Copyright:       2021 HandBrake Team
 License:         Creative Commons Attribution-ShareAlike 4.0 International
 License_Abbr:    CC BY-SA 4.0
 License_URL:     https://handbrake.fr/docs/license.html
@@ -126,9 +126,10 @@ Table of contents
   *Types of video files HandBrake can read*
 - [Official presets](technical/official-presets.html)
   *Technical summary of the official presets*
+- [Performance](technical/performance.html)
+  *How various settings affect encoding speed*
 - Video
   - [Video codecs](technical/video-codecs.html)<span class="notice draft"><span>draft</span></span>
-  - [Video encoding speed](technical/video-encoding-performance.html)<span class="notice draft"><span>draft</span></span>
   - [Constant quality versus average bit rate](technical/video-cq-vs-abr.html)<span class="notice draft"><span>draft</span></span>
   - [Presets and tunes](technical/video-presets-tunes.html)<span class="notice draft"><span>draft</span></span>
   - [Profiles and levels](technical/video-profiles-levels.html)<span class="notice draft"><span>draft</span></span>
@@ -136,9 +137,11 @@ Table of contents
   - [Anamorphic video](technical/anamorphic-guide.html)<span class="notice draft"><span>draft</span></span>
   - [Modulus](technical/modulus.html)<span class="notice draft"><span>draft</span></span>
   - [Frame rate](technical/frame-rates.html)<span class="notice draft"><span>draft</span></span>
-  - [Intel QuickSync Video (QSV) options](technical/video-qsv-options.html)<span class="notice draft"><span>draft</span></span>
-  - [AMD VCE](technical/video-vce.html)<span class="notice draft"><span>draft</span></span>
-  - [NVidia NVENC](technical/video-nvenc.html)<span class="notice draft"><span>draft</span></span>
+- Hardware encoders
+  - [AMD VCE](technical/video-vce.html)
+  - [Apple VideoToolbox](technical/video-videotoolbox.html)
+  - [Intel Quick Sync Video](technical/video-qsv.html)
+  - [NVIDIA NVENC](technical/video-nvenc.html)
 - Audio
   - [Dynamic range compression](technical/dynamic-range-compression.html)<span class="notice draft"><span>draft</span></span>
   - [Audio quality](technical/audio-quality.html)<span class="notice draft"><span>draft</span></span>
@@ -160,9 +163,9 @@ Table of contents
 
 - Building HandBrake
   - [Building HandBrake for BSD](developer/build-bsd.html)
-    - Installing dependencies on [FreeBSD](developer/install-dependencies-freebsd.html)
+    - Installing dependencies on [FreeBSD](developer/install-dependencies-freebsd.html) / [NetBSD](developer/install-dependencies-netbsd.html)
   - [Building HandBrake for Linux](developer/build-linux.html)
-    - Installing dependencies on [Arch](developer/install-dependencies-arch.html) / [CentOS](developer/install-dependencies-centos.html) / [Debian](developer/install-dependencies-debian.html) / [Fedora](developer/install-dependencies-fedora.html) / [Gentoo](developer/install-dependencies-gentoo.html) / [Ubuntu](developer/install-dependencies-ubuntu.html)
+    - Installing dependencies on [Arch](developer/install-dependencies-arch.html) / [CentOS](developer/install-dependencies-centos.html) / [Clear](developer/install-dependencies-clear.html) / [Debian](developer/install-dependencies-debian.html) / [Fedora](developer/install-dependencies-fedora.html) / [Gentoo](developer/install-dependencies-gentoo.html) / [Ubuntu](developer/install-dependencies-ubuntu.html) / [Void](developer/install-dependencies-void.html)
   - [Building HandBrake for Mac](developer/build-mac.html)
   - [Building HandBrake for Windows](developer/build-windows.html)
 - Packaging HandBrake

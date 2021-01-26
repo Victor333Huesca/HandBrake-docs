@@ -8,7 +8,7 @@ Project_Version: Latest
 Language:        English
 Language_Code:   en
 Authors:         [ Scott (s55) ]
-Copyright:       2019 HandBrake Team
+Copyright:       2021 HandBrake Team
 License:         Creative Commons Attribution-ShareAlike 4.0 International
 License_Abbr:    CC BY-SA 4.0
 License_URL:     https://handbrake.fr/docs/license.html
@@ -41,7 +41,7 @@ cd Downloads
 
 HandBrakeCLI -i /path/to/source -o ../Desktop/my_output.mp4
 
-If HandBrake is in a different directory than your in, you can always access it via the full path. i.en
+If HandBrake is in a different directory than you're in, you can always access it via the full path. i.e.
 
 ./path/to/HandBrakeCLI -i /path/to/source -o ../Desktop/my_output.mp4
 

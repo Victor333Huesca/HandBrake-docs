@@ -1,20 +1,20 @@
 ---
 Type:            article
-Title:           Source formats
+Title:           Supported source formats
 Project:         HandBrake
 Project_URL:     https://handbrake.fr/
 Project_Version: Latest
 Language:        English
 Language_Code:   en
 Authors:         [ Bradley Sepos <bradley@bradleysepos.com> (BradleyS) ]
-Copyright:       2019 HandBrake Team
+Copyright:       2021 HandBrake Team
 License:         Creative Commons Attribution-ShareAlike 4.0 International
 License_Abbr:    CC BY-SA 4.0
 License_URL:     https://handbrake.fr/docs/license.html
 ---
 
-Source formats
-==============
+Supported source formats
+========================
 
 One of HandBrake's strengths is its ability to open a wide variety of video formats. HandBrake uses [FFmpeg](https://ffmpeg.org/) under the hood and generally can open whatever FFmpeg will, in addition to disc-based formats like DVD and Blu-ray.
 
@@ -28,15 +28,15 @@ Some cameras store multiple videos in a folder structure with a playlist similar
 
 ## Screen and game recordings, web videos, video editing projects, and other computer-related sources
 
-Some screen recording softwares can export or record directly to video files HandBrake can open. Common video file types are MP4 or M4V, MKV, MPG or MPEG, AVI, and WMV.
+Some screen recording softwares can export or record directly to video files HandBrake can open. Common video file types are MP4 or M4V, MKV, MOV, MPG or MPEG, AVI, and WMV.
 
 HandBrake can open web videos in FLV, WEBM, MP4, and many other formats.
 
-Videos made using consumer video editing software such as [iMovie](https://www.apple.com/mac/imovie/) must first be exported to a common video format for compatibility with HandBrake.
+Videos made using consumer video editing software such as [iMovie](https://www.apple.com/mac/imovie/) and [Shotcut](https://www.shotcut.org/) must first be exported to a common video format for compatibility with HandBrake.
 
 ## Professional video production formats
 
-HandBrake can open a number of production formats produced by professional video cameras and [NLE](abbr:Non-linear editing system)s, including [ProRes](https://en.wikipedia.org/wiki/Apple_ProRes) and [DNxHD](https://en.wikipedia.org/wiki/DNxHD_codec).
+HandBrake can open a number of production formats produced by professional video cameras and [NLE](abbr:Non-linear editing system)s, including [MXF](https://en.wikipedia.org/wiki/Material_Exchange_Format), [MPEG-TS](https://en.wikipedia.org/wiki/MPEG_transport_stream), and [QuickTime](https://en.wikipedia.org/wiki/QuickTime), along with common video codecs such as [CineForm](https://en.wikipedia.org/wiki/CineForm), [DNxHD](https://en.wikipedia.org/wiki/DNxHD_codec), [DNxHR](https://en.wikipedia.org/wiki/DNxHR_codec), [ProRes](https://en.wikipedia.org/wiki/Apple_ProRes), [XAVC](https://en.wikipedia.org/wiki/XAVC), and [XDCAM](https://en.wikipedia.org/wiki/XDCAM).
 
 ## DVD, Blu-ray, AVCHD/AVCHD Lite[^avchd-partial-support], and HD-DVD[^hddvd-partial-support] discs or disc backups
 

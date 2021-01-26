@@ -7,7 +7,7 @@ Project_Version: Latest
 Language:        English
 Language_Code:   en
 Authors:         [ Bradley Sepos <bradley@bradleysepos.com> (BradleyS) ]
-Copyright:       2019 HandBrake Team
+Copyright:       2021 HandBrake Team
 License:         Creative Commons Attribution-ShareAlike 4.0 International
 License_Abbr:    CC BY-SA 4.0
 License_URL:     https://handbrake.fr/docs/license.html
@@ -16,7 +16,7 @@ License_URL:     https://handbrake.fr/docs/license.html
 Installing dependencies on FreeBSD
 ==================================
 
-The following instructions are for [FreeBSD](https://www.freebsd.org) 11.1 x86_64.
+The following instructions are for [FreeBSD](https://www.freebsd.org) 11 and 12.
 
 Basic requirements to run commands:
 
@@ -33,31 +33,38 @@ Dependencies:
 - fontconfig
 - freetype2
 - fribidi
-- git
 - gcc
-- m4
+- git
 - gmake
-- patch
 - gtar
 - harfbuzz
 - jansson
 - lame (source port)
 - libass
 - libiconv
+- libjpeg-turbo
 - libogg
 - libsamplerate
 - libtheora
 - libtool
 - libvorbis
+- libvpx
 - libx264
 - libxml2
 - lzma
+- m4
+- meson
 - nasm
+- ninja
 - opus
+- patch
 - pkgconf
 - python
 - speex
-- yasm
+
+Intel Quick Sync Video dependencies (optional):
+
+- intel-media-sdk
 
 Graphical interface dependencies:
 
@@ -80,7 +87,7 @@ Graphical interface dependencies:
 
 Install dependencies.
 
-    sudo pkg install autoconf automake bash bzip2 cmake flac fontconfig freetype2 fribidi git gcc lzma m4 gmake patch gtar harfbuzz jansson libass libiconv libogg libsamplerate libtheora libtool libvorbis libx264 libxml2 nasm opus pkgconf python speex yasm
+    sudo pkg install autoconf automake bash bzip2 cmake flac fontconfig freetype2 fribidi gcc git lzma gmake gtar harfbuzz jansson libass libiconv libjpeg-turbo libogg libsamplerate libtheora libtool libvorbis libvpx libx264 libxml2 m4 meson nasm ninja opus patch pkgconf python speex
 
 Build and install the `lame` source port.
 
@@ -89,8 +96,12 @@ Build and install the `lame` source port.
     sudo portsnap update
     LASTDIR="`pwd`"
     cd /usr/ports/audio/lame
-    sudo make install
-    cd "LASTDIR"
+    sudo make install || sudo make reinstall
+    cd "$LASTDIR"
+
+To build with Intel Quick Sync Video support, install the QSV dependencies.
+
+    sudo pkg install intel-media-sdk
 
 To build the GTK [GUI](abbr:Graphical User Interface), install the graphical interface dependencies.
 

@@ -1,5 +1,6 @@
 ---
 Type:            article
+State:           [ obsolete ]
 Title:           Installing dependencies on Fedora
 Project:         HandBrake
 Project_URL:     https://handbrake.fr/
@@ -7,7 +8,7 @@ Project_Version: 1.2.0
 Language:        English
 Language_Code:   en
 Authors:         [ Bradley Sepos <bradley@bradleysepos.com> (BradleyS) ]
-Copyright:       2019 HandBrake Team
+Copyright:       2021 HandBrake Team
 License:         Creative Commons Attribution-ShareAlike 4.0 International
 License_Abbr:    CC BY-SA 4.0
 License_URL:     https://handbrake.fr/docs/license.html
@@ -66,6 +67,7 @@ Graphical interface dependencies:
 - GNOME Software Development
 - dbus-glib-devel
 - gstreamer1-devel
+- gstreamer1-libav
 - gstreamer1-plugins-base-devel
 - intltool
 - libgudev1-devel
@@ -86,7 +88,7 @@ Install the [RPM Fusion](http://rpmfusion.org) Free repository and related addit
 To build the GTK [GUI](abbr:Graphical User Interface), install the graphical interface dependencies.
 
     sudo yum groupinstall "X Software Development" "GNOME Software Development"
-    sudo yum install dbus-glib-devel gstreamer1-devel gstreamer1-plugins-base-devel intltool libgudev1-devel libnotify-devel
+    sudo yum install dbus-glib-devel gstreamer1-devel gstreamer1-libav gstreamer1-plugins-base-devel intltool libgudev1-devel libnotify-devel
     sudo yum install webkit2gtk3-devel || sudo yum install webkitgtk4-devel || sudo yum install webkitgtk3-devel
 
 Fedora is now prepared to build HandBrake. See [Building HandBrake for Linux](build-linux.html) for further instructions.

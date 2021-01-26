@@ -7,7 +7,7 @@ Project_Version: Latest
 Language:        English
 Language_Code:   en
 Authors:         [ Bradley Sepos <bradley@bradleysepos.com> (BradleyS), Scott (s55) ]
-Copyright:       2019 HandBrake Team
+Copyright:       2021 HandBrake Team
 License:         Creative Commons Attribution-ShareAlike 4.0 International
 License_Abbr:    CC BY-SA 4.0
 License_URL:     https://handbrake.fr/docs/license.html
@@ -18,35 +18,80 @@ Building HandBrake for Windows
 
 ## Command line interface and LibHB
 
-Building the HandBrake [CLI](abbr:Command Line Interface) and LibHB (`hb.dll`) for Windows requires Linux and a recent [MinGW-w64](https://mingw-w64.org/) toolchain. Ubuntu 18.04 LTS (Bionic Beaver) is recommended; other distros may work as well. In all cases, we recommend you build the MinGW-w64 toolchain using our instructions and the included script, as most packaged versions have issues that can produce non-functioning builds.
+Building the HandBrake [CLI](abbr:Command Line Interface) and LibHB (`hb.dll`) for Windows requires Linux and a recent [MinGW-w64](https://mingw-w64.org/) toolchain. Fedora 28 or later, or Ubuntu 18.04 LTS (Bionic Beaver) or later are recommended; other distros may work as well. In all cases, we recommend you build the MinGW-w64 toolchain using our instructions and the included script, as some packaged versions have issues that can produce non-functioning builds.
 
-The following instructions are for Ubuntu 18.04 LTS (Bionic Beaver).
+### Installing dependencies on Fedora
+
+The following instructions are for [Fedora](https://getfedora.org) 30 through 32.
+
+Basic requirements to run commands:
+
+- sudo (for normal user accounts)
+
+Dependencies:
+
+- Development Tools
+- C Development Tools and Libraries
+- cmake
+- gcc-c++
+- git
+- libtool
+- m4
+- make
+- meson
+- nasm
+- ninja-build
+- patch
+- python
+- tar
+- zlib-devel
+
+Install dependencies.
+
+    sudo dnf update
+    sudo dnf groupinstall "Development Tools" "C Development Tools and Libraries"
+    sudo dnf install cmake gcc-c++ git libtool m4 make meson nasm ninja-build patch python tar zlib-devel
+
+Install the additional dependencies required to build the MinGW-w64 toolchain.
+
+    sudo dnf install bison bzip2 curl flex g++ gzip pax
+
+
+### Installing dependencies on Ubuntu
+
+The following instructions are for [Ubuntu](https://www.ubuntu.com) 20.04 (Focal Fossa).
+
+Basic requirements to run commands:
+
+- sudo (for normal user accounts)
 
 Dependencies:
 
 - autoconf
 - automake
+- autopoint
 - build-essential
 - cmake
-- curl
 - gcc
 - git
 - libtool
 - libtool-bin
 - m4
 - make
+- meson
 - nasm
+- ninja-build
 - patch
 - pkg-config
 - python
 - tar
-- yasm
 - zlib1g-dev
 
 Additional MinGW-w64 toolchain dependencies:
 
 - bison
 - bzip2
+- curl
 - flex
 - g++
 - gzip
@@ -55,11 +100,14 @@ Additional MinGW-w64 toolchain dependencies:
 Install dependencies.
 
     sudo apt-get update
-    sudo apt-get install automake autoconf build-essential cmake curl gcc git intltool libtool libtool-bin m4 make nasm patch pkg-config python tar yasm zlib1g-dev
+    sudo apt-get install automake autoconf autopoint build-essential cmake gcc git intltool libtool libtool-bin m4 make meson nasm ninja-build patch pkg-config python tar zlib1g-dev
 
 Install the additional dependencies required to build the MinGW-w64 toolchain.
 
-    sudo apt-get install bison bzip2 flex g++ gzip pax
+    sudo apt-get install bison bzip2 curl flex g++ gzip pax
+
+
+### Building the MinGW-w64 toolchain and HandBrake
 
 Clone the HandBrake repository.
 
@@ -73,7 +121,7 @@ This process will take a few minutes, then provide you with instructions for add
 
 Build HandBrake. For higher quality audio, enable the FDK AAC encoder by appending `--enable-fdk-aac`. Builds including FDK AAC must be for personal use only and may not be distributed.[^fdk-aac-license]
 
-    ./configure --cross=x86_64-w64-mingw32 --enable-qsv --enable-vce --enable-nvenc --launch-jobs=$(nproc) --launch
+    ./configure --cross=x86_64-w64-mingw32 --launch-jobs=$(nproc) --launch
 
 When complete, you will find `HandBrakeCLI.exe` in the `build` directory and `hb.dll` in `build/libhb`.
 
@@ -91,9 +139,9 @@ The following tools are required to build and run the [GUI](abbr:Graphical User 
   - [Source Tree](https://www.sourcetreeapp.com) (recommended)
   - Client included with Visual Studio 2015 or later
 - `hb.dll` (see the LibHB build instructions preceding these, or download from [https://handbrake.fr/nightly.php](https://handbrake.fr/nightly.php))
-- [JetBrains ReSharper](https://www.jetbrains.com/resharper/) (optional)
-  - Highly recommended for developers interested in working on the Windows UI
-  - Active, regular contributors may request a free for open source ReSharper license from the HandBrake Team, courtesy JetBrains
+- [JetBrains ReSharper](https://www.jetbrains.com/?from=HandBrake) (optional)
+  - Recommended for developers interested in working on the Windows UI
+  - Active, regular contributors may request a free for open source ReSharper license from the HandBrake Team, courtesy of JetBrains
 
 Clone `https://github.com/HandBrake/HandBrake.git` using your git client.
 

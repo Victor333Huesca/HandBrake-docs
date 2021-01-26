@@ -7,7 +7,7 @@ Project_Version: Latest
 Language:        English
 Language_Code:   en
 Authors:         [ Bradley Sepos <bradley@bradleysepos.com> (BradleyS) ]
-Copyright:       2019 HandBrake Team
+Copyright:       2021 HandBrake Team
 License:         Creative Commons Attribution-ShareAlike 4.0 International
 License_Abbr:    CC BY-SA 4.0
 License_URL:     https://handbrake.fr/docs/license.html
@@ -23,6 +23,7 @@ If you have installed a HandBrake package from your distribution or other third-
 Dependency installation instructions are available for the following distributions.
 
 - [FreeBSD](install-dependencies-freebsd.html)
+- [NetBSD](install-dependencies-netbsd.html)
 
 ## Building HandBrake
 
@@ -30,7 +31,7 @@ Clone the HandBrake repository.
 
     git clone https://github.com/HandBrake/HandBrake.git && cd HandBrake
 
-Build HandBrake. To build the command line interface only, disable the graphical interface by appending `--disable-gtk`.
+Build HandBrake. To enable experimental support for Intel Quick Sync Video, append `--enable-qsv`. To build the command line interface only, disable the graphical interface by appending `--disable-gtk`.
 
     ./configure --launch-jobs=$(sysctl -n hw.ncpu) --launch
 

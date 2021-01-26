@@ -8,7 +8,7 @@ Project_Version: Latest
 Language:        English
 Language_Code:   en
 Authors:         [ Scott (s55) ]
-Copyright:       2019 HandBrake Team
+Copyright:       2021 HandBrake Team
 License:         Creative Commons Attribution-ShareAlike 4.0 International
 License_Abbr:    CC BY-SA 4.0
 License_URL:     https://handbrake.fr/docs/license.html
@@ -26,8 +26,19 @@ If you open the programs Preferences screen, you'll see a section that referes t
 Here you can define the default path where output files will be stored, and the format the file name will take.
 
 By default, it will be {source}-{title}
-You can add in addition to this: {chapters}
 
+These are all of the placeholder field options:
+* Live Update:
+  * {source}
+  * {title}
+  * {chapters}
+* Non-live Update: These only change if you scan a new source, change title or chapters.
+  * {date}
+  * {time}
+  * {creation-date}
+  * {creation-time}
+  * {quality}
+  * {bitrate}
 
 ### Source Name Handling.
 

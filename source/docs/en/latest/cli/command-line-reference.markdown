@@ -7,7 +7,7 @@ Project_Version: Latest
 Language:        English
 Language_Code:   en
 Authors:         [ Bradley Sepos <bradley@bradleysepos.com> (BradleyS), Scott (s55) ]
-Copyright:       2019 HandBrake Team
+Copyright:       2021 HandBrake Team
 License:         Creative Commons Attribution-ShareAlike 4.0 International
 License_Abbr:    CC BY-SA 4.0
 License_URL:     https://handbrake.fr/docs/license.html
@@ -566,6 +566,8 @@ The following details all the available options in the command line interface. T
                                or less is selected. This should locate subtitles
                                for short foreign language segments. Best used in
                                conjunction with --subtitle-forced.
+      -S, --subname <string>   Set subtitle track name(s).
+                               Separate tracks by commas.
       -F, --subtitle-forced[=string]
                                Only display subtitles from the selected stream
                                if the subtitle has the forced flag set. The

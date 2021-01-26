@@ -7,7 +7,7 @@ Project_Version: Latest
 Language:        English
 Language_Code:   en
 Authors:         [ Bradley Sepos <bradley@bradleysepos.com> (BradleyS) ]
-Copyright:       2019 HandBrake Team
+Copyright:       2021 HandBrake Team
 License:         Creative Commons Attribution-ShareAlike 4.0 International
 License_Abbr:    CC BY-SA 4.0
 License_URL:     https://handbrake.fr/docs/license.html
@@ -45,17 +45,28 @@ If the above does not solve your issue, someone may be able to help via HandBrak
 
 ### HandBrake does not launch
 
-HandBrake versions prior to 1.1.0 and nightly builds are not code signed using an Apple Developer Certificate. By default, Gatekeeper prevents unsigned applications from running on your Mac.
+*HandBrake releases since version 1.1.0 are signed with an Apple Developer Certificate. These instructions are only applicable to [nightly builds](https://handbrake.fr/nightly.php)[^nightly-builds].*
 
-More information about successfully launching HandBrake is available on [Downloading and installing HandBrake](../get-handbrake/download-and-install.html).
+Unlike HandBrake releases, HandBrake nightly builds are not code signed using an Apple Developer Certificate. The first time you attempt to launch a HandBrake nightly or snapshot build, your Mac may present this message to you[^gatekeeper-disabled]:
+
+![Mac Gatekeeper message](../../images/mac/gatekeeper-message-1.1.0.png "Gatekeeper may present this message when launching a HandBrake nightly build for the first time.")
+
+Select `OK` to dismiss the Gatekeeper message, then hold down the `Control` key and select the HandBrake icon to bring up the shortcut menu. Select `Open` and your Mac will ask whether you are certain you wish to open HandBrake. Confirm that you want to trust HandBrake by again selecting `Open`.[^gatekeeper-instructions]
+
+![Opening HandBrake using Finder's shortcut menu](../../images/mac/shortcut-menu-open-1.1.0.png "Launching HandBrake using the Open option in the Finder's shortcut menu will bypass the initial Gatekeeper message.")
+
+![Gatekeeper message with Open option](../../images/mac/gatekeeper-message-quarantine-1.1.0.png "Gatekeeper may also present this message when launching HandBrake for the first time. Selecting Open will tell Gatekeeper to trust HandBrake.")
+
+Now HandBrake is up and running. You should not have to repeat this process in the near future.
 
 ### General troubleshooting
 
 Try each of the following steps until HandBrake is working again.
 
 1. Restart your computer
-2. Delete your HandBrake configuration data and presets (replace username with your own)
-    - /Users/username/Library/Application Support/HandBrake
+2. Delete your HandBrake configuration data and presets (replace `Username` with your user name)
+    - /Users/Username/Library/Containers/fr.handbrake.HandBrake/Data/Library/Application Support/HandBrake/
+    - /Users/Username/Library/Application Support/HandBrake
 3. Install/reinstall the latest version of HandBrake; see [Downloading and installing HandBrake](../get-handbrake/download-and-install.html)
 
 If the above does not solve your issue, someone may be able to help via HandBrake's [Community support](community-support.html) channels.
@@ -87,3 +98,9 @@ Try each of the following steps until HandBrake is working again.
 If the above does not solve your issue, someone may be able to help via HandBrake's [Community support](community-support.html) channels.
 
 <!-- /.system-windows -->
+
+[^nightly-builds]: Nightly builds are based on HandBrake's latest development code, including new and experimental features that may be unstable or significantly different than the latest release version. Although everyone is welcome to try them, nightly builds are best suited for experienced users and developers.
+
+[^gatekeeper-disabled]: If Gatekeeper is disabled on your Mac, you may not see this message.
+
+[^gatekeeper-instructions]: These instructions are taken directly from Apple's Gatekeeper support documents. You can learn more about Gatekeeper [here](https://support.apple.com/en-us/HT202491)

@@ -7,7 +7,7 @@ Project_Version: Latest
 Language:        English
 Language_Code:   en
 Authors:         [ Bradley Sepos <bradley@bradleysepos.com> (BradleyS) ]
-Copyright:       2019 HandBrake Team
+Copyright:       2021 HandBrake Team
 License:         Creative Commons Attribution-ShareAlike 4.0 International
 License_Abbr:    CC BY-SA 4.0
 License_URL:     https://handbrake.fr/docs/license.html
@@ -60,20 +60,27 @@ Each General `Preset` is named according to the quality or speed, maximum resolu
 
 HandBrake's Web `Presets` use the broadly compatible [MP4 container](https://en.wikipedia.org/wiki/MPEG-4_Part_14) and are tailored for sharing videos on the Internet.
 
+Discord Nitro `Presets` are designed to guarantee video up to a certain duration will produce a file less than 50 [MB](abbr:megabytes) for use with [Discord Nitro Classic](https://discordapp.com/nitro) or 100 [MB](abbr:megabytes) for use with [Discord Nitro](https://discordapp.com/nitro). Likewise, Discord `Presets` are designed to guarantee video up to a certain duration will produce a file less than 8 [MB](abbr:megabytes) for use with [Discord](https://discordapp.com/) free accounts. The maximum duration is part of each `Preset` name. Audio quality is slightly reduced, and visually noisy/grainy or high motion scenes may show a reduction in quality in order to achieve the target file size.
+
 Gmail `Presets` are designed to guarantee video up to a certain duration will produce a file less than 25 [MB](abbr:megabytes) for attaching to an email.[^email-size-limit] The maximum duration is part of each `Preset` name. Audio quality is slightly reduced, and visually noisy/grainy or high motion scenes may show a reduction in quality in order to achieve the target file size.
 
 Vimeo YouTube `Presets` produce videos suitable for uploading to popular video hosting services.[^video-hosting-services] `Presets` marked HQ are designed to deliver higher quality while encoding in a resonable amount of time.
 
-| Preset                        | Type | Video | Audio      | Picture Quality   | Encoding Speed | File Size     |
-|-------------------------------|------|-------|------------|-------------------|----------------|---------------|
-| Gmail Large 3 Minutes 720p30  | MP4  | H.264 | AAC stereo | Depends on source | Fast           | 25 MB or less |
-| Gmail Medium 5 Minutes 480p30 | MP4  | H.264 | AAC stereo | Depends on source | Fast           | 25 MB or less |
-| Gmail Small 10 Minutes 288p30 | MP4  | H.264 | AAC mono   | Depends on source | Fast           | 25 MB or less |
-| Vimeo YouTube HQ 2160p60 4K   | MP4  | H.264 | AAC stereo | High              | Medium         | Large         |
-| Vimeo YouTube HQ 1440p60 2.5K | MP4  | H.264 | AAC stereo | High              | Medium         | Large         |
-| Vimeo YouTube HQ 1080p60      | MP4  | H.264 | AAC stereo | High              | Medium         | Large         |
-| Vimeo YouTube HQ 720p60       | MP4  | H.264 | AAC stereo | High              | Medium         | Large         |
-| Vimeo YouTube 720p30          | MP4  | H.264 | AAC stereo | Standard          | Medium         | Average       |
+| Preset                                   | Type | Video | Audio      | Picture Quality   | Encoding Speed | File Size         |
+|------------------------------------------|------|-------|------------|-------------------|----------------|-------------------|
+| Discord Nitro Large 3-6 Minutes 1080p30  | MP4  | H.264 | AAC stereo | Depends on source | Fast           | 50/100 MB or less |
+| Discord Nitro Medium 5-10 Minutes 720p30 | MP4  | H.264 | AAC stereo | Depends on source | Fast           | 50/100 MB or less |
+| Discord Nitro Small 10-20 Minutes 480p30 | MP4  | H.264 | AAC stereo | Depends on source | Fast           | 50/100 MB or less |
+| Discord Small 2 Minutes 360p30           | MP4  | H.264 | AAC mono   | Depends on source | Very Fast      |      8 MB or less |
+| Discord Tiny 5 Minutes 240p30            | MP4  | H.264 | AAC mono   | Depends on source | Very Fast      |      8 MB or less |
+| Gmail Large 3 Minutes 720p30             | MP4  | H.264 | AAC stereo | Depends on source | Fast           |     25 MB or less |
+| Gmail Medium 5 Minutes 480p30            | MP4  | H.264 | AAC stereo | Depends on source | Fast           |     25 MB or less |
+| Gmail Small 10 Minutes 288p30            | MP4  | H.264 | AAC mono   | Depends on source | Fast           |     25 MB or less |
+| Vimeo YouTube HQ 2160p60 4K              | MP4  | H.264 | AAC stereo | High              | Medium         |             Large |
+| Vimeo YouTube HQ 1440p60 2.5K            | MP4  | H.264 | AAC stereo | High              | Medium         |             Large |
+| Vimeo YouTube HQ 1080p60                 | MP4  | H.264 | AAC stereo | High              | Medium         |             Large |
+| Vimeo YouTube HQ 720p60                  | MP4  | H.264 | AAC stereo | High              | Medium         |             Large |
+| Vimeo YouTube 720p30                     | MP4  | H.264 | AAC stereo | Standard          | Medium         |           Average |
 
 ## Devices presets
 
@@ -83,36 +90,33 @@ Most Devices `Presets` use the broadly compatible [MP4 container](https://en.wik
 
 Each Devices `Preset` is named according to the device name or class, maximum resolution, and maximum frame rate it produces.
 
-| Preset                              | Type    | Video     | Audio                            | Encoding Speed |
-|-------------------------------------|---------|-----------|----------------------------------|----------------|
-| Android 1080p30                     | MP4     | H.264     | AAC stereo                       | Medium         |
-| Android 720p30                      | MP4     | H.264     | AAC stereo                       | Medium         |
-| Android 576p25                      | MP4     | H.264     | AAC stereo                       | Medium         |
-| Android 480p30                      | MP4     | H.264     | AAC stereo                       | Medium         |
-| Apple 2160p60 4K HEVC Surround      | MP4     | **H.265** | AAC stereo; Dolby Digital (AC-3) | **Very slow**  |
-| Apple 1080p60 Surround              | MP4     | H.264     | AAC stereo; Dolby Digital (AC-3) | Medium         |
-| Apple 1080p30 Surround              | MP4     | H.264     | AAC stereo; Dolby Digital (AC-3) | Medium         |
-| Apple 720p30 Surround               | MP4     | H.264     | AAC stereo; Dolby Digital (AC-3) | Medium         |
-| Apple 540p30 Surround               | MP4     | H.264     | AAC stereo; Dolby Digital (AC-3) | Medium         |
-| Apple 240p30                        | MP4     | H.264     | AAC stereo                       | Medium         |
-| Chromecast 2160p60 4K HEVC Surround | MP4     | **H.265** | AAC stereo; Dolby Digital (AC-3) | **Very slow**  |
-| Chromecast 1080p30 Surround         | MP4     | H.264     | AAC stereo; Dolby Digital (AC-3) | Medium         |
-| Fire TV 2160p60 4K HEVC Surround    | MP4     | **H.265** | AAC stereo; Dolby Digital (AC-3) | **Very slow**  |
-| Fire TV 1080p30 Surround            | MP4     | H.264     | AAC stereo; Dolby Digital (AC-3) | Medium         |
-| Playstation 1080p30 Surround        | MP4     | H.264     | AAC stereo; Dolby Digital (AC-3) | Medium         |
-| Playstation 720p30                  | MP4     | H.264     | AAC stereo                       | Medium         |
-| Playstation 540p30                  | MP4     | H.264     | AAC stereo                       | Medium         |
-| Roku 2160p60 4K HEVC Surround       | **MKV** | **H.265** | AAC stereo; AAC, Dolby Digital (AC-3), Dolby Digital Plus (E-AC-3), DTS, or MP3 | **Very slow** |
-| Roku 1080p30 Surround               | MP4     | H.264     | AAC stereo; Dolby Digital (AC-3) | Medium         |
-| Roku 720p30 Surround                | MP4     | H.264     | AAC stereo; Dolby Digital (AC-3) | Medium         |
-| Roku 576p25                         | MP4     | H.264     | AAC stereo                       | Medium         |
-| Roku 480p30                         | MP4     | H.264     | AAC stereo                       | Medium         |
-| Windows Mobile 1080p30              | MP4     | H.264     | AAC stereo                       | Medium         |
-| Windows Mobile 720p30               | MP4     | H.264     | AAC stereo                       | Medium         |
-| Windows Mobile 540p30               | MP4     | H.264     | AAC stereo                       | Medium         |
-| Windows Mobile 480p30               | MP4     | H.264     | AAC stereo                       | Medium         |
-| Xbox 1080p30 Surround               | MP4     | H.264     | AAC stereo; Dolby Digital (AC-3) | Medium         |
-| Xbox Legacy 1080p30 Surround        | MP4     | H.264     | AAC stereo; Dolby Digital (AC-3) | Medium         |
+| Preset                               | Type    | Video     | Audio                            | Encoding Speed |
+|--------------------------------------|---------|-----------|----------------------------------|----------------|
+| Amazon Fire 2160p60 4K HEVC Surround | MP4     | **H.265** | AAC stereo; Dolby Digital (AC-3) | **Very slow**  |
+| Amazon Fire 1080p30 Surround         | MP4     | H.264     | AAC stereo; Dolby Digital (AC-3) | Medium         |
+| Amazon Fire 720p30 Surround          | MP4     | H.264     | AAC stereo                       | Medium         |
+| Android 1080p30                      | MP4     | H.264     | AAC stereo                       | Medium         |
+| Android 720p30                       | MP4     | H.264     | AAC stereo                       | Medium         |
+| Android 576p25                       | MP4     | H.264     | AAC stereo                       | Medium         |
+| Android 480p30                       | MP4     | H.264     | AAC stereo                       | Medium         |
+| Apple 2160p60 4K HEVC Surround       | MP4     | **H.265** | AAC stereo; Dolby Digital (AC-3) | **Very slow**  |
+| Apple 1080p60 Surround               | MP4     | H.264     | AAC stereo; Dolby Digital (AC-3) | Medium         |
+| Apple 1080p30 Surround               | MP4     | H.264     | AAC stereo; Dolby Digital (AC-3) | Medium         |
+| Apple 720p30 Surround                | MP4     | H.264     | AAC stereo; Dolby Digital (AC-3) | Medium         |
+| Apple 540p30 Surround                | MP4     | H.264     | AAC stereo; Dolby Digital (AC-3) | Medium         |
+| Chromecast 2160p60 4K HEVC Surround  | MP4     | **H.265** | AAC stereo; Dolby Digital (AC-3) | **Very slow**  |
+| Chromecast 1080p60 Surround          | MP4     | H.264     | AAC stereo; Dolby Digital (AC-3) | Medium         |
+| Chromecast 1080p30 Surround          | MP4     | H.264     | AAC stereo; Dolby Digital (AC-3) | Medium         |
+| Playstation 2160p60 4K Surround      | MP4     | H.264     | AAC stereo; Dolby Digital (AC-3) | Slow           |
+| Playstation 1080p30 Surround         | MP4     | H.264     | AAC stereo; Dolby Digital (AC-3) | Medium         |
+| Playstation 720p30                   | MP4     | H.264     | AAC stereo                       | Medium         |
+| Playstation 540p30                   | MP4     | H.264     | AAC stereo                       | Medium         |
+| Roku 2160p60 4K HEVC Surround        | **MKV** | **H.265** | AAC stereo; AAC, Dolby Digital (AC-3), Dolby Digital Plus (E-AC-3), DTS, or MP3 | **Very slow** |
+| Roku 1080p30 Surround                | MP4     | H.264     | AAC stereo; Dolby Digital (AC-3) | Medium         |
+| Roku 720p30 Surround                 | MP4     | H.264     | AAC stereo; Dolby Digital (AC-3) | Medium         |
+| Roku 576p25                          | MP4     | H.264     | AAC stereo                       | Medium         |
+| Roku 480p30                          | MP4     | H.264     | AAC stereo                       | Medium         |
+| Xbox 1080p30 Surround                | MP4     | H.264     | AAC stereo; Dolby Digital (AC-3) | Medium         |
 
 ## Matroska presets
 
@@ -159,6 +163,17 @@ Production Proxy `Presets` create fast to encode, Intra-only video limited to on
 
 From time to time, official `Presets` may be deprecated or removed. Compatible replacements are listed here.
 
+### Legacy Devices presets
+
+| Preset                       | Compatible Preset                | Notes                                                                                           |
+|------------------------------|----------------------------------|-------------------------------------------------------------------------------------------------|
+| Apple 240p30                 | None                             | Obsolete.                                                                                       |
+| Windows Mobile 1080p30       | General > Fast 1080p30           | Later Windows Mobile and Windows Phone devices, and Windows 10 Mobile devices.                  |
+| Windows Mobile 720p30        | General > Fast 720p30            | Add vbv-bufsize=10000:vbv-maxrate=10000 to the additional encoder options for older devices.    |
+| Windows Mobile 540p30        | General > Fast 480p30            | Add vbv-bufsize=4000:vbv-maxrate=4000 to the additional encoder options for older devices.      |
+| Windows Mobile 480p30        | General > Fast 480p30            | Add vbv-bufsize=2000:vbv-maxrate=2000 to the additional encoder options for older devices.      |
+| Xbox Legacy 1080p30 Surround | Devices > Apple 1080p30 Surround | Disable anamorphic, dimensions must be evenly divisible by 8, video must be H.264 Main Profile. |
+
 ### Legacy 0.10.x presets
 
 | Preset              | Compatible Preset                | Notes                                                                                                                                   |
@@ -166,7 +181,7 @@ From time to time, official `Presets` may be deprecated or removed. Compatible r
 | Normal              | General > Fast 1080p30           | Decomb filter, peak limited to 30 FPS, slightly decreased video bit rate, improved motion quality, foreign audio search.                |
 | High Profile        | General > HQ 1080p30 Surround    | Peak limited to 30 FPS, reduced video bit rate spikes, foreign audio search.                                                            |
 | Universal           | None                             | General > Fast 576p25/480p30 may be suitable replacements where compatibility with ancient devices and surround sound are not required. |
-| iPod                | Devices > Apple 240p30           | Decomb filter, foreign audio search.                                                                                                    |
+| iPod                | None                             | Obsolete.                                                                                                                               |
 | iPhone & iPod touch | Devices > Apple 540p30 Surround  | Decomb filter, slightly increased video bit rate, surround sound, foreign audio search.                                                 |
 | iPad                | Devices > Apple 720p30 Surround  | Decomb filter, slightly decreased video bit rate, surround sound, foreign audio search.                                                 |
 | AppleTV             | Devices > Apple 540p30 Surround  | Decomb filter, foreign audio search.                                                                                                    |
@@ -174,7 +189,7 @@ From time to time, official `Presets` may be deprecated or removed. Compatible r
 | AppleTV 3           | Devices > Apple 1080p30 Surround | Decomb filter, slightly decreased video bit rate, foreign audio search.                                                                 |
 | Android             | Devices > Android 576p25/480p30  | Decomb filter, peak limited to 25 FPS (Android 576p25 only), slightly increased video bit rate, foreign audio search, chapter markers.  |
 | Android Tablet      | Devices > Android 720p30         | Decomb filter, slightly increased video bit rate, foreign audio search, chapter markers.                                                |
-| Windows Phone 8     | None                             | Devices > Windows Mobile 720p30 may be suitable with anamorphic off and audio bit rate reduced to 128 kbps.                             |
+| Windows Phone 8     | None                             | Obsolete.                                                                                                                               |
 
 [^high-quality-settings-less-compatible]: Higher quality General `Presets` may include settings that are incompatible with older or slower devices.
 

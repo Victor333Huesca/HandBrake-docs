@@ -7,7 +7,7 @@ Project_Version: Latest
 Language:        English
 Language_Code:   en
 Authors:         [ Bradley Sepos <bradley@bradleysepos.com> (BradleyS) ]
-Copyright:       2019 HandBrake Team
+Copyright:       2021 HandBrake Team
 License:         Creative Commons Attribution-ShareAlike 4.0 International
 License_Abbr:    CC BY-SA 4.0
 License_URL:     https://handbrake.fr/docs/license.html
@@ -38,7 +38,7 @@ The HandBrake Team welcomes contributions from user interface and graphic design
 
 ### Code
 
-Developers wanting to contribute code should check out the [HandBrake source code on GitHub](https://github.com/HandBrake/HandBrake) and a create pull request on GitHub for each contribution. For more on this workflow, read [Understanding the GitHub Flow](https://guides.github.com/introduction/flow/).
+Developers wanting to contribute code should check out the [HandBrake source code on GitHub](https://github.com/HandBrake/HandBrake) and create a pull request on GitHub for each contribution. For more on this workflow, read [Understanding the GitHub Flow](https://guides.github.com/introduction/flow/).
 
 [Open issues](https://github.com/HandBrake/HandBrake/issues) are good candidates for learning and fixing various parts of the code base.
 

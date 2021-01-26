@@ -7,7 +7,7 @@ Project_Version: Latest
 Language:        English
 Language_Code:   en
 Authors:         [ Bradley Sepos <bradley@bradleysepos.com> (BradleyS), Scott (s55) ]
-Copyright:       2019 HandBrake Team
+Copyright:       2021 HandBrake Team
 License:         Creative Commons Attribution-ShareAlike 4.0 International
 License_Abbr:    CC BY-SA 4.0
 License_URL:     https://handbrake.fr/docs/license.html
@@ -24,7 +24,7 @@ The following video codecs are available for encoding in HandBrake.
     - Provides excellent quality, performance, and file size
     - Widely supported by media players, including mobile devices
 
-- H.264 (Intel QuickSync):
+- H.264 (Intel QSV):
 
     - MPEG-4 Part 10, also known as H.264/AVC
     - Hardware based encoder available on Intel processors with Intel HD Graphics (Haswell or newer series CPUs recommended for best quality and file size)

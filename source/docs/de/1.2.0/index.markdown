@@ -1,5 +1,6 @@
 ---
 Type:            article
+State:           [ obsolete ]
 Title:           Willkommen
 Project:         HandBrake
 Project_URL:     https://handbrake.fr/
@@ -7,7 +8,7 @@ Project_Version: 1.2.0
 Language:        Deutsch
 Language_Code:   de
 Authors:         [ Bernhard Rader (raderb) ]
-Copyright:       2019 HandBrake Team
+Copyright:       2021 HandBrake Team
 License:         Creative Commons Attribution-ShareAlike 4.0 International
 License_Abbr:    CC BY-SA 4.0
 License_URL:     https://handbrake.fr/docs/license.html
@@ -16,7 +17,7 @@ License_URL:     https://handbrake.fr/docs/license.html
 Willkommen
 =======
 
-Willkommen bei der deutschsprachigen Dokumentation für HandBrake 1.2.0.
+Willkommen bei der deutschsprachigen Dokumentation für HandBrake 1.2.0 bis 1.2.2.
 
 Hier sind ein paar Links damit du gleich loslegen kannst:
 

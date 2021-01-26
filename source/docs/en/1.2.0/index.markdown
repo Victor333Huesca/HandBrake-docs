@@ -1,5 +1,6 @@
 ---
 Type:            article
+State:           [ obsolete ]
 Title:           Welcome
 Project:         HandBrake
 Project_URL:     https://handbrake.fr/
@@ -7,7 +8,7 @@ Project_Version: 1.2.0
 Language:        English
 Language_Code:   en
 Authors:         [ Bradley Sepos <bradley@bradleysepos.com> (BradleyS) ]
-Copyright:       2019 HandBrake Team
+Copyright:       2021 HandBrake Team
 License:         Creative Commons Attribution-ShareAlike 4.0 International
 License_Abbr:    CC BY-SA 4.0
 License_URL:     https://handbrake.fr/docs/license.html
@@ -16,7 +17,7 @@ License_URL:     https://handbrake.fr/docs/license.html
 Welcome
 =======
 
-Welcome to the English documentation for HandBrake 1.2.0.
+Welcome to the English documentation for HandBrake 1.2.0 through 1.2.2.
 
 Here are some quick links to get you started:
 

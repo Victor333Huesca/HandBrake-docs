@@ -7,7 +7,7 @@ Project_Version: Latest
 Language:        English
 Language_Code:   en
 Authors:         [ Bradley Sepos <bradley@bradleysepos.com> (BradleyS) ]
-Copyright:       2019 HandBrake Team
+Copyright:       2021 HandBrake Team
 License:         Creative Commons Attribution-ShareAlike 4.0 International
 License_Abbr:    CC BY-SA 4.0
 License_URL:     https://handbrake.fr/docs/license.html
@@ -55,9 +55,11 @@ Broken third-party packages/builds include but are not limited to:
 - Debian Multimedia: `handbrake`, `handbrake-cli`, `handbrake-gtk`
 - FreeBSD: `handbrake`
 - Gentoo: `handbrake`
+- NixOS: `handbrake`
 - openSUSE Packman: `handbrake`, `handbrake-cli`, `handbrake-gtk`
 - RPM Fusion: `handbrake`, `handbrake-cli`
 - Ubuntu Universe: `handbrake`, `handbrake-cli`, `handbrake-dbg`
+- Void: `handbrake`, `handbrake-cli`, `handbrake-cli-dbg`, `handbrake-dbg`
 
 Please **do not** request support for these or any other unofficial versions. The HandBrake Team has zero control over them and therefore cannot provide meaningful support.
 
